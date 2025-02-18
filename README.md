@@ -4,8 +4,8 @@ A tool for exploring single-layer toroidal inductor configurations. This tool he
 
 ## Features
 
-- Calculates possible winding combinations for toroidal cores
-- Supports both standard and Mag Inc Kool Mμ cores
+- Calculates realizable winding combinations for toroidal cores
+- Toroid dataset includes Mag-Inc and Micrometals cores.
 - Generates detailed visualization diagrams
 - Computes inductance and fill factors
 - Multiple visualization styles (B&W, Color, Creative)
@@ -41,7 +41,7 @@ python toroid-universe.py --random-plots 5 --style creative
 
 ## Output
 
-The tool generates a comprehensive [results table](output/master_table.csv) containing all possible configurations and their parameters.
+The tool generates a comprehensive [results table](example/master-table.ipynb) containing the realizable single layer toroid configurations.
 
 ## License
 Copyright 2025 Andrew Meares
