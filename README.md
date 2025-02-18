@@ -24,7 +24,7 @@ Basic usage:
 python toroid-universe.py
 ```
 
-Generate visualizations for all combinations:
+Generate visualizations for all combinations !WARNING! There are >8000 combinations currently:
 ```bash
 python toroid-universe.py --generate-plots
 ```
@@ -60,5 +60,5 @@ pip install -r requirements.txt
 ```
 
 ## License
-
+Copyright 2025 Andrew Meares
 MIT License
