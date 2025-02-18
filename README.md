@@ -15,7 +15,7 @@ A tool for exploring single-layer toroidal inductor configurations. This tool he
 
 Here's an example visualization of a T184-26 core wound with 11 AWG wire:
 
-![Example Toroid Visualization](output/images/T184-26_AWG11.png)
+![Example Toroid Visualization](example/T184-26_AWG11.png)
 
 ## Usage
 
