@@ -43,22 +43,6 @@ python toroid-universe.py --random-plots 5 --style creative
 
 The tool generates a comprehensive [results table](output/master_table.csv) containing all possible configurations and their parameters.
 
-## Requirements
-
-- Python 3.x
-- pandas
-- numpy
-- matplotlib
-- odfpy (for reading .ods files)
-- tqdm (for progress bars)
-- argparse
-- pathlib
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
 ## License
 Copyright 2025 Andrew Meares
 MIT License
