@@ -3,3 +3,5 @@ numpy
 matplotlib
 tqdm
 odfpy
+argparse
+pathlib
