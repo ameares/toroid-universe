@@ -384,8 +384,11 @@ def main():
     parser.add_argument('--output_dir', default='output', help="Directory to save output files")
     parser.add_argument('--style', default='color', choices=['bw', 'color', 'creative'],
                       help="Style to use for the diagrams (default: color)")
-    parser.add_argument('--generate-plots', action='store_true',
-                      help="Generate visualization plots (default: False)")
+    plot_group = parser.add_mutually_exclusive_group()
+    plot_group.add_argument('--generate-plots', action='store_true',
+                         help="Generate visualization plots for all combinations (default: False)")
+    plot_group.add_argument('--random-plots', type=int, metavar='N',
+                         help="Generate N random visualization plots")
     args = parser.parse_args()
 
     toroid_file = './toroid_cores_dimensions_01152025.ods'
@@ -418,9 +421,16 @@ def main():
     print(f"Results saved to {args.output_dir}. Total configurations processed: {len(results)}")
 
     # Generate plots if requested
-    if args.generate_plots:
+    if args.generate_plots or args.random_plots:
         print("\nGenerating visualization plots...")
-        for _, row in tqdm(results.iterrows(), total=len(results), desc="Generating plots"):
+        if args.random_plots:
+            # Select random subset of results
+            sample_size = min(args.random_plots, len(results))
+            plot_data = results.sample(n=sample_size)
+        else:
+            plot_data = results
+            
+        for _, row in tqdm(plot_data.iterrows(), total=len(plot_data), desc="Generating plots"):
             generate_diagram(row, row, row['Turns'], args.output_dir, args.slop_factor, args.style)
 
 if __name__ == "__main__":
