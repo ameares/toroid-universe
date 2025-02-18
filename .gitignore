@@ -1,3 +1,4 @@
 .aider*
 .venv/
 output/*
+example/.~lock.master_table.csv#
